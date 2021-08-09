@@ -1,3 +1,3 @@
 # Callie
 
-Open Source Aix with MIT License
+Open Source Aix
