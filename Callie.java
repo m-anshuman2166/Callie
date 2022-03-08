@@ -28,6 +28,8 @@ import com.google.appinventor.components.runtime.errors.YailRuntimeError;
 import com.google.appinventor.components.runtime.util.Dates;
 import com.google.appinventor.components.runtime.util.TimerInternal;
 import com.google.appinventor.components.runtime.util.ErrorMessages;
+import com.google.appinventor.components.common.*;
+import com.google.appinventor.components.common.PropertyTypeConstants;
 
 
 import java.util.*;
@@ -109,9 +111,19 @@ public class Callie extends AndroidNonvisibleComponent {
   public void minDate(long value){
       calendarView.setMinDate(value);
   }
-  @SimpleFunction
-  public long CurrentTimeInMillis(){
-      return System.currentTimeMillis();
+  @SimpleProperty
+  public void setWeekNumberColor(int color){
+      calendarView.setWeekNumberColor(color);
+  }
+  @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_COLOR, defaultValue = Component.DEFAULT_VALUE_COLOR_DEFAULT)
+  @SimpleProperty
+  public void WeekNumberColor(final int Color){
+        calendarView.setWeekNumberColor(Color)
+  }
+  @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_COLOR, defaultValue = Component.DEFAULT_VALUE_COLOR_DEFAULT)
+  @SimpleProperty
+  public void WeekSeparatorLineColor(final int Color){
+        calendarView.setWeekSeparatorLineColor(Color)
   }
 @SimpleFunction()
   public long StringDateToMilliSeconds(String date){
